@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Layout from '../../components/Layout';
-import { View, Text, StyleSheet, TextInput, FlatList, Pressable, Image } from 'react-native';
+import { View, Text,  StyleSheet, TextInput, FlatList, Pressable, Image } from 'react-native';
 import ProductCard from '../../components/ProductCard';
 import { Ionicons } from '@expo/vector-icons';
 import { products } from '../../data/products';
@@ -34,14 +34,15 @@ const HomeScreen = () => {
     return (
         <Layout>
             <View style={styles.container}>
-                {/* Contenido encima de la lista */}
                 <View style={styles.content}>
                     <View style={styles.containerTitle}>
+                        
                         <Text style={styles.title}>
                             Empieza{"\n"}
                             <Text style={{ color: '#4A90E2' }}>Elije, </Text>
                             lleva 
                         </Text>
+                        
                         <View style={styles.imageContainer}>
                             <Image source={require('../../assets/logo-market.png')} style={styles.logo} />
                         </View>
@@ -53,8 +54,8 @@ const HomeScreen = () => {
                             placeholder="Buscar productos"
                             style={styles.searchInput}
                             placeholderTextColor="gray"
-                            value={searchQuery} // Valor del input que está vinculado al estado `searchQuery`
-                            onChangeText={setSearchQuery} // Actualiza el estado `searchQuery` cada vez que el usuario escribe algo
+                            value={searchQuery} 
+                            onChangeText={setSearchQuery} 
                         />
                     </View>
 
@@ -76,7 +77,7 @@ const HomeScreen = () => {
                                     >
                                         <Text style={[
                                             styles.categoryText,
-                                            isSelected && styles.selectedCategoryText // estilo especial si está seleccionada
+                                            isSelected && styles.selectedCategoryText 
                                         ]}>
                                             {item}
                                         </Text>
